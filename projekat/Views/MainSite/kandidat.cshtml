@@ -1,0 +1,37 @@
+﻿@model projekat.Models.ModelKoren
+@using projekat.Helpers
+@{
+    ViewBag.Title = "kandidat";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@section pomoc
+{
+    <a rel="nofollow" href="https://templatemo.com/contact">Pomoć?</a>
+}
+
+<div id="contact" class="contact-us section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                <div class="section-heading">
+                    <h2>Dolaženje do novih saznanja je lakše kad smo u kontaktu</h2>
+                    <p>Ukoliko imate nekih pitanja možete nam se obratiti za pomoć</p>
+                    <div class="phone-info">
+                        <h4>Pozovite: <span><i class="fa fa-phone"></i> <a href="#">010-020-0340</a></span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                <h2><i><b>Unet je kandidat:</b></i></h2>
+                <p>Ime kandidata: @Model.NoviKandidat.Ime</p>
+                <p>Prezime kandidata : @Model.NoviKandidat.Prezime</p>
+                <p>Struka :@Model.NoviKandidat.Struka</p>
+                <p>Interes : @Model.NoviKandidat.Interes</p>
+                <p>Iskustvo : @Model.NoviKandidat.Iskustvo</p>
+                <p>Poruka :@Model.NoviKandidat.Poruka</p>
+                @HelperZaposlen.StatusZaposlen(Model.NoviKandidat.Zaposlen)
+            </div>
+        </div>
+
+    </div>
+</div>

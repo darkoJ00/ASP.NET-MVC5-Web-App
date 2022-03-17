@@ -1,0 +1,87 @@
+﻿@model projekat.Models.ModelKoren
+@{
+    ViewBag.Title = "kontakt";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@section pomoc
+{
+    <a rel="nofollow" href="https://templatemo.com/contact">Pomoć?</a>
+}
+
+<div id="contact" class="contact-us section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                <div class="section-heading">
+                    <h2>Dolaženje do novih saznanja je lakše kad smo u kontaktu</h2>
+                    <p>Ukoliko imate nekih pitanja možete nam se obratiti za pomoć</p>
+                    <div class="phone-info">
+                        <h4>Pozovite: <span><i class="fa fa-phone"></i> <a href="#">010-020-0340</a></span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                <h2><i><b>Kandidat:</b></i></h2>
+                @using (Html.BeginForm("Kontakt","MainSite",FormMethod.Post))
+                {
+            <div class="row">
+                <div class="col-lg-12">
+                    <label>Ime:</label>
+                    <fieldset>
+                        @Html.TextBoxFor(x => x.NoviKandidat.Ime, new { @class = "input_field", required = "required" })
+                    </fieldset>
+                </div>
+                <div class="col-lg-12">
+                    <label>Prezime:</label>
+                    <fieldset>
+                        @Html.TextBoxFor(x => x.NoviKandidat.Prezime, new { @class = "input_field", required = "required" })
+                    </fieldset>
+                </div>
+                <div class="col-lg-12">
+                    <label>Struka:</label>
+                    <fieldset>
+                        @Html.TextBoxFor(x => x.NoviKandidat.Struka, new { @class = "input_field", required = "required" })
+                    </fieldset>
+                </div>
+                <div class="col-lg-12">
+                    <label>Interes:</label>
+                    <fieldset>
+                        @Html.TextBoxFor(x => x.NoviKandidat.Interes, new { @class = "input_field", required = "required" })
+                    </fieldset>
+                </div>
+                <div class="col-lg-12">
+                    <label>Iskustvo:</label>
+                    <fieldset>
+                        @Html.TextAreaFor(x => x.NoviKandidat.Iskustvo, new { @class = "input_field", required = "required" })
+                    </fieldset>
+                </div>
+                <div class="col-lg-12">
+                    <label>Poruka:</label>
+                    <fieldset>
+                        @Html.TextAreaFor(x => x.NoviKandidat.Poruka, new { @class = "input_field", required = "required" })
+                    </fieldset>
+                </div>
+                <div class="col-lg-12">
+                    <fieldset>
+                        <label>Zaposlen</label>
+                        @Html.CheckBoxFor(x => x.NoviKandidat.Zaposlen)
+                    </fieldset>
+                </div>
+                <div class="col-lg-12">
+                    <fieldset>
+                        <button type="submit" id="form-submit" class="main-button ">Pošalji</button>
+                    </fieldset>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                    <fieldset>
+                        @{ Html.RenderPartial("_Pocetak"); }
+                    </fieldset>
+                </div>
+            </div>
+                }
+            </div>
+        </div>
+        
+    </div>
+</div>
+
